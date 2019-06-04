@@ -1,0 +1,48 @@
+Arguments: 
+  C:\Program Files\nodejs\node.exe C:\Program Files (x86)\Yarn\bin\yarn.js add express
+
+PATH: 
+  C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\Git\cmd;C:\Program Files\nodejs\;C:\ProgramData\chocolatey\bin;C:\Program Files (x86)\Yarn\bin\;C:\Users\lucas.wundervald\.windows-build-tools\python27\;C:\Program Files\nodejs\node_modules\npm\node_modules\npm-lifecycle\node-gyp-bin;C:\Users\lucas.wundervald\AppData\Roaming\npm\node_modules\windows-build-tools\node_modules\.bin;C:\Users\lucas.wundervald\AppData\Roaming\npm\node_modules\.bin;C:\Users\lucas.wundervald\AppData\Local\Microsoft\WindowsApps;C:\Users\lucas.wundervald\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\lucas.wundervald\AppData\Roaming\npm;C:\Users\lucas.wundervald\AppData\Local\Yarn\bin
+
+Yarn version: 
+  1.16.0
+
+Node version: 
+  8.15.1
+
+Platform: 
+  win32 x64
+
+Trace: 
+  SyntaxError: c:\Users\lucas.wundervald\Desktop\lucas\package.json: Unexpected token } in JSON at position 337
+      at JSON.parse (<anonymous>)
+      at C:\Program Files (x86)\Yarn\lib\cli.js:1625:59
+      at Generator.next (<anonymous>)
+      at step (C:\Program Files (x86)\Yarn\lib\cli.js:304:30)
+      at C:\Program Files (x86)\Yarn\lib\cli.js:315:13
+      at <anonymous>
+
+npm manifest: 
+  {
+    "name": "testwithmongo",
+    "version": "1.0.0",
+    "description": "test with mongodb ",
+    "main": "index.js",
+    "scripts": {
+      "start": "nodemon src/index.js",
+      "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": [
+      "test",
+      "mongo",
+      "db"
+    ],
+    "author": "lucas s. wundervald",
+    "license": "ISC",
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
