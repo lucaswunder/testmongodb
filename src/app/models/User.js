@@ -1,4 +1,5 @@
 const mongoose = require('mongoose')
+const bcrypt = require('bcryptjs')
 /**
  * Message schema, contains replies too
  * @constructor Message
@@ -22,6 +23,14 @@ const UserSchema = new mongoose.Schema({
     type: Date,
     default: Date.now
   }
+})
+
+UserSchema.pre('save', async function (next) {
+  if (!this.isModified('password')) {
+    return next()
+  }
+
+  this.password = await bcrypt.hash(this.password, 8)
 })
 
 module.exports = mongoose.model('User', UserSchema)
