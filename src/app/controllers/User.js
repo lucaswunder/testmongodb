@@ -1,5 +1,5 @@
 const R = require('ramda')
-const User = require('../models/user')
+const User = require('../models/User')
 
 class UserController {
   async store (req, res) {
@@ -14,7 +14,7 @@ class UserController {
 
     const user = await User.create(data)
 
-    return res.status(200).json(user)
+    return res.status(201).json(user)
   }
 }
 
