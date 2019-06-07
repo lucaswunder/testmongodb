@@ -15,7 +15,9 @@
   "author": "lucas s. wundervald",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "mongoose": "^5.5.13",
+    "ramda": "^0.26.1"
   },
   "devDependencies": {
     "eslint": "5.9.0",
