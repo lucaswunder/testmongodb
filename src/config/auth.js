@@ -1,4 +1,4 @@
 module.exports = {
-  secret: 'testemongo',
-  ttl: 86400
+  secret: process.env.APP_SECRET,
+  ttl: process.env.TTL
 }

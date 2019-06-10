@@ -2,5 +2,5 @@ module.exports = {
   /**
    * Mongo Conection
    */
-  uri: 'mongodb://localhost:27017/testenode'
+  uri: process.env.DB_URL
 }
