@@ -8,22 +8,28 @@ const routes = express.Router()
 const AuthMiddleware = require('./app/middlewares/auth')
 
 /** Controllers */
-const controllers = require('./app/controllers')
+const ProductController = require('./app/controllers/Product')
+const StoreController = require('./app/controllers/Store')
+const SessionController = require('./app/controllers/Session')
+const UserController = require('./app/controllers/User')
 
 /** Validators */
-const validators = require('./app/validators')
+const ProductValidator = require('./app/validators/Product')
+const UserValidator = require('./app/validators/User')
+const SessionValidator = require('./app/validators/Session')
+const StoreValidator = require('./app/validators/Store')
 
 /** Routes */
 
 /** View Products */
 
-routes.get('/product', handle(controllers.Product.index))
+routes.get('/product', handle(ProductController.index))
 
 /** Users */
-routes.post('/user', validate(validators.User), handle(controllers.User.store))
+routes.post('/user', validate(UserValidator), handle(UserController.store))
 
 /** Session */
-routes.post('/session', validate(validators.Session), handle(controllers.Session.store))
+routes.post('/session', validate(SessionValidator), handle(SessionController.store))
 
 /** Set Middleware */
 routes.use(AuthMiddleware)
@@ -31,17 +37,17 @@ routes.use(AuthMiddleware)
 /** Auth routes */
 
 /** Product */
-routes.get('/product/:id', handle(controllers.Product.show))
-routes.post('/product/', validate(validators.Product), handle(controllers.Product.store))
-routes.put('/product/:id', validate(validators.Product), handle(controllers.Product.update))
-routes.delete('/product/:id', handle(controllers.Product.destroy))
+routes.get('/product/:id', handle(ProductController.show))
+routes.post('/product/', validate(ProductValidator), handle(ProductController.store))
+routes.put('/product/:id', validate(ProductValidator), handle(ProductController.update))
+routes.delete('/product/:id', handle(ProductController.destroy))
 
 /** Store */
-routes.get('/store', handle(controllers.Store.index))
-routes.get('/store/:id', handle(controllers.Store.show))
-routes.post('/store/', validate(validators.Store), handle(controllers.Store.store))
-routes.put('/store/:id', validate(validators.Store), handle(controllers.Store.update))
-routes.delete('/store/:id', handle(controllers.Store.destroy))
+routes.get('/store', handle(StoreController.index))
+routes.get('/store/:id', handle(StoreController.show))
+routes.post('/store/', validate(StoreValidator), handle(StoreController.store))
+routes.put('/store/:id', validate(StoreValidator), handle(StoreController.update))
+routes.delete('/store/:id', handle(StoreController.destroy))
 
 /**
  * Not Found
