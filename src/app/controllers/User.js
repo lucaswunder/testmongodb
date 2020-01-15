@@ -1,7 +1,8 @@
 const R = require('ramda')
+
 const User = require('../models/User')
 
-class UserController {
+module.exports = {
   async store (req, res) {
     let data = req.body
 
@@ -21,5 +22,3 @@ class UserController {
     return res.status(201).json(user)
   }
 }
-
-module.exports = new UserController()

@@ -1,7 +1,8 @@
 const R = require('ramda')
+
 const User = require('../models/User')
 
-class SessionController {
+module.exports = {
   async store (req, res) {
     let data = req.body
     data = R.pick(['email', 'password'], data)
@@ -20,7 +21,8 @@ class SessionController {
       return res.status(400).json({ error: 'Invalid request' })
     }
 
-    return res.json({ user, token: User.generateToken(user) })
+    return res.json({ name: user.name,
+      email: user.email,
+      token: User.generateToken(user) })
   }
 }
-module.exports = new SessionController()

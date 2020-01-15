@@ -49,6 +49,7 @@ describe('Session', () => {
     expect(response.status).toBe(400)
     expect(response.body).toHaveProperty('errors')
     expect(response.body).toHaveProperty('statusText', 'Bad Request')
+
     done()
   })
 })
